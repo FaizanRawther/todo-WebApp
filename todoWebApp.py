@@ -5,10 +5,10 @@ def add_todo():
     todo=st.session_state["new_todo"] + "\n"
     todos.append(todo)
     fc.write_todos(todos)
-
+st.set_page_config(layout="wide")
 st.title("My todo webapp")
 st.subheader("Lists")
-st.write("This app is makes your productivity")
+st.write("This app is makes your <b>productivity</b>.",unsafe_allow_html=True)
 st.text_input(label="Enter a todo:  ",placeholder="Add a todo",on_change=add_todo,key="new_todo")
 
 for index,todo in enumerate(todos):
